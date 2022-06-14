@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pou</title>
+</head>
+
+<body style="background-image: url(https://as01.epimg.net/epik/imagenes/2020/04/22/portada/1587542523_132599_1587544250_noticia_normal.jpg);
+background-size: cover;
+background-repeat: no-repeat;">
+
+<body>
+    
+
+    
+    <div style="text-align: center; margin-top: 300px;">
+        <img src="https://i.pinimg.com/originals/d8/55/9f/d8559f57d2cfcc8db35f032b424f1fe8.gif";
+        id="imagen" alt="pow" style="width: 500px; height: 500px;">
+        
+    
+    <div style="text-align: center; margin-top: 50px">
+        <button id="comer" style="width: 200px; height: 50px; font-size: 30px; background-color: yellow;">Comer</button>
+        <button id="dormir" style="width: 200px; height: 50px; font-size: 30px; background-color:blue;">Dormir</button>
+        <button id="beber" style="width: 200px; height: 50px; font-size: 30px; background-color:yellowgreen;">Beber</button>
+        <button id="hablar" style="width: 200px; height: 50px; font-size: 30px; background-color:palevioletred;">Hablar</button>
+        <button id="ejercicio" style="width: 200px; height: 50px; font-size: 30px; background-color:brown">Ejercicio</button>
+    </div>
+
+
+
+</body>
+
+<script>
+let ncomer = 0;
+let ndormir = 0;
+let nbeber = 0;
+let nejercico = 0;
+//empieza
+btnComer = document.getElementById('comer');
+btnDormir = document.getElementById('dormir');
+btnBeber = document.getElementById('beber');
+btnHablar = document.getElementById('hablar');
+btnEjercicio = document.getElementById('ejercicio');
+
+//comer
+btnComer.addEventListener('click', function(){  
+    //se cambia de imagen 
+   alimentar();
+});
+
+function neutral(){
+    document.getElementById('imagen').src="https://i.pinimg.com/originals/d8/55/9f/d8559f57d2cfcc8db35f032b424f1fe8.gif";
+}
+
+function alimentar(){
+    if(ncomer<8){
+        ncomer++;
+        document.getElementById('imagen').src="https://c.tenor.com/e6eIx6k2OoEAAAAC/the-simpsons-donuts.gif";
+        
+    }else{
+        document.getElementById('imagen').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSH5gRFgMFKScLJWRu2KuQIVobPbMGgMHGhw&usqp=CAU";
+        alert("homero se quedo dormido por comer mucho");
+        alert("espera a que se le pase el mal del puerco");
+        
+        tiempo();
+    }
+}
+
+
+//se encarga de quitar los botones por si homero come de mas 
+function quitarBotones(){
+    btnComer.style.display="none";
+    btnBeber.style.display="none";
+    btnDormir.style.display="none";
+    btnEjercicio.style.display="none";
+    btnHablar.style.display="none";
+}
+
+function ponerBotones(){
+    btnComer.style.display="inline";
+    btnBeber.style.display="inline";
+    btnDormir.style.display="inline";
+    btnEjercicio.style.display="inline";
+    btnHablar.style.display="inline";
+}
+
+function tiempo(){
+    quitarBotones();
+    setTimeout(function(){
+        neutral();
+        ponerBotones();
+    
+    },6000);
+}
+
+</script>
+</html>
